@@ -44,7 +44,7 @@ services:
 
     db.openelis.org:
         container_name: openelisglobal-database 
-        image: itechuw/openelis-global-2-database:3.2.1.3
+        image: itechuw/openelis-global-2-database:3.2.1.7
         platform: linux/amd64
         ports:
             - "15432:5432"
@@ -69,7 +69,7 @@ services:
             
     oe.openelis.org:
         container_name: openelisglobal-webapp 
-        image: itechuw/openelis-global-2:3.2.1.3
+        image: itechuw/openelis-global-2:3.2.1.7
         platform: linux/amd64  
         depends_on:
             - db.openelis.org
@@ -97,7 +97,7 @@ services:
             - ./configs/plugins/:/var/lib/openelis-global/plugins
             - ./configs/logs/oeLogs:/var/lib/openelis-global/logs
             - ./configs/logs/tomcatLogs/:/usr/local/tomcat/logs
-            - ./configs/properties/SystemConfiguration.properties:/var/lib/openelis-global/properties/SystemConfiguration.properties
+            - ./configs/properties:/var/lib/openelis-global/properties
             - ./configs/analyzer/analyzer-test-map.csv:/var/lib/openelis-global/analyzer/analyzer-test-map.csv
             - ./configs/odoo/odoo-test-product-mapping.csv:/var/lib/openelis-global/odoo/odoo-test-product-mapping.csv
             - ./configs/programs/:/var/lib/openelis-global/programs
@@ -109,7 +109,7 @@ services:
             
     fhir.openelis.org:
         container_name: external-fhir-api
-        image: itechuw/openelis-global-2-fhir:3.2.1.3
+        image: itechuw/openelis-global-2-fhir:3.2.1.7
         platform: linux/amd64
         ports:
             - "8081:8080"
@@ -143,7 +143,7 @@ services:
 
          
     frontend.openelis.org:
-        image: itechuw/openelis-global-2-frontend:3.2.1.3
+        image: itechuw/openelis-global-2-frontend:3.2.1.7
         container_name: openelisglobal-front-end
         platform: linux/amd64
         networks:
@@ -154,7 +154,7 @@ services:
         tty: true
 
     proxy:
-        image: itechuw/openelis-global-2-proxy:3.2.1.3
+        image: itechuw/openelis-global-2-proxy:3.2.1.7
         container_name: openelisglobal-proxy
         platform: linux/amd64
         ports:
