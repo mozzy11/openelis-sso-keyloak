@@ -803,8 +803,8 @@
         "saml.onetimeuse.condition": "false",
         "saml.server.signature.keyinfo.xmlSigKeyInfoKeyNameTransformer": "NONE",
         "saml_signature_canonicalization_method": "http://www.w3.org/2001/10/xml-exc-c14n#",
-        "saml_single_logout_service_url_post": "http://localhost/api/OpenELIS-Global/logout/saml2/slo/keycloak",
-        "saml_single_logout_service_url_redirect": "http://localhost/api/OpenELIS-Global/logout/saml2/slo/keycloak"
+        "saml_single_logout_service_url_post": "https://localhost/api/OpenELIS-Global/logout/saml2/slo/keycloak",
+        "saml_single_logout_service_url_redirect": "https://localhost/api/OpenELIS-Global/logout/saml2/slo/keycloak"
       },
       "authenticationFlowBindingOverrides": {},
       "fullScopeAllowed": true,
